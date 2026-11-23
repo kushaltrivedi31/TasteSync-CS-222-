@@ -1,0 +1,87 @@
+{
+  "upbeat": [
+    {
+      "id": "upbeat-street-tacos",
+      "name": "Street tacos",
+      "explanation": "Bright toppings like lime, salsa, and pickled onion, and they're easy to order a round of and share when you're feeling social."
+    },
+    {
+      "id": "upbeat-poke-bowl",
+      "name": "Poke bowl",
+      "explanation": "Colorful, build-your-own, and quick to grab, so it keeps pace with a busy, good-mood day instead of slowing it down."
+    },
+    {
+      "id": "upbeat-korean-fried-chicken",
+      "name": "Korean fried chicken",
+      "explanation": "Crunchy, saucy, and made for splitting with friends: a fun order for celebrating a day that went well."
+    }
+  ],
+  "calm": [
+    {
+      "id": "calm-ramen",
+      "name": "Ramen",
+      "explanation": "A warm bowl you eat slowly, which suits an unhurried evening when you have time to sit and enjoy it."
+    },
+    {
+      "id": "calm-mediterranean-mezze",
+      "name": "Mediterranean mezze",
+      "explanation": "Hummus, pita, falafel, and olives are small plates you can graze on at your own pace without any rush."
+    },
+    {
+      "id": "calm-cafe-soup-and-sandwich",
+      "name": "Café soup and sandwich",
+      "explanation": "A simple, familiar café lunch that pairs well with a book or a quiet corner and doesn't ask much of you."
+    }
+  ],
+  "stressed": [
+    {
+      "id": "stressed-mac-and-cheese",
+      "name": "Mac and cheese",
+      "explanation": "Familiar and predictable, so there are no surprises to think about when your head is already full."
+    },
+    {
+      "id": "stressed-pizza-by-the-slice",
+      "name": "Pizza by the slice",
+      "explanation": "Fast, inexpensive, easy to find near campus, and easy to eat one-handed while you keep working through a deadline."
+    },
+    {
+      "id": "stressed-burrito-bowl",
+      "name": "Burrito bowl",
+      "explanation": "One order covers a full meal with a few quick choices, so you can stop deciding about food and get back to what's on your plate."
+    }
+  ],
+  "low-energy": [
+    {
+      "id": "low-energy-pho",
+      "name": "Pho",
+      "explanation": "Arrives ready to eat and is mostly hands-off: add herbs and lime if you feel like it, then just sip."
+    },
+    {
+      "id": "low-energy-chicken-and-rice-platter",
+      "name": "Chicken and rice platter",
+      "explanation": "One container, one fork, and widely available for pickup or delivery when cooking feels like too much."
+    },
+    {
+      "id": "low-energy-bagel-sandwich",
+      "name": "Bagel sandwich",
+      "explanation": "Quick to grab, takes a few minutes to eat, and keeps fine if you only finish half now and save the rest."
+    }
+  ],
+  "adventurous": [
+    {
+      "id": "adventurous-ethiopian",
+      "name": "Ethiopian",
+      "explanation": "Stews and vegetables served on injera and eaten by hand from a shared platter, a different way of eating if you haven't tried it."
+    },
+    {
+      "id": "adventurous-sichuan",
+      "name": "Sichuan",
+      "explanation": "Sichuan peppercorns bring a tingly, numbing heat alongside chili that tastes unlike most everyday takeout."
+    },
+    {
+      "id": "adventurous-peruvian",
+      "name": "Peruvian",
+      "explanation": "Dishes like ceviche and lomo saltado blend Andean, Spanish, Japanese, and Chinese influences in one cuisine."
+    }
+  ]
+}
