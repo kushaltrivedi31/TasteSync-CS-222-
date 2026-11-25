@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { MOOD_DETAILS, type Mood, type RecommendationResponse } from "../../shared/moods";
 import { RecommendationError, fetchRecommendations } from "./api";
 import { MoodPicker } from "./components/MoodPicker";
+import { loadSelectedMood, saveSelectedMood } from "./moodStorage";
 import { RecommendationList } from "./components/RecommendationList";
 
 /**
@@ -22,7 +23,8 @@ function moodLabel(mood: Mood): string {
 }
 
 export function App() {
-  const [selectedMood, setSelectedMood] = useState<Mood | null>(null);
+  // Restore only the last selection; recommendations are fetched when the user asks.
+  const [selectedMood, setSelectedMood] = useState<Mood | null>(loadSelectedMood);
   const [request, setRequest] = useState<RequestState>({ status: "idle" });
   const [showValidation, setShowValidation] = useState(false);
 
@@ -74,6 +76,7 @@ export function App() {
 
   function handleMoodChange(mood: Mood) {
     setSelectedMood(mood);
+    saveSelectedMood(mood);
     setShowValidation(false);
   }
 
