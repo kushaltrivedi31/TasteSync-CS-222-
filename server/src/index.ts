@@ -12,8 +12,17 @@ function readPort(value: string | undefined): number {
 }
 
 const port = readPort(process.env.PORT);
+const placesApiKey = process.env.GOOGLE_PLACES_API_KEY?.trim() || undefined;
+// Testing only: lets the Playwright suite point the server at a local mock.
+const placesBaseUrl = process.env.GOOGLE_PLACES_API_BASE_URL?.trim() || undefined;
 
-createApp().listen(port, (error) => {
+if (!placesApiKey) {
+  console.log(
+    "Google restaurant search is off (GOOGLE_PLACES_API_KEY not set). The demo list still works.",
+  );
+}
+
+createApp({ places: { apiKey: placesApiKey, baseUrl: placesBaseUrl } }).listen(port, (error) => {
   if (error) {
     console.error(`TasteSync API failed to start on port ${port}:`, error.message);
     process.exit(1);
