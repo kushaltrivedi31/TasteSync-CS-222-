@@ -38,7 +38,7 @@ test("quiz → confirmed vibe → recommendations → Google restaurant results 
   await page.getByRole("button", { name: "Find restaurants for Ramen" }).click();
 
   const panel = page.getByRole("region", { name: "Places for ramen" });
-  await expect(panel.getByText("Google Maps search")).toBeVisible();
+  await expect(panel.getByText("Google Maps search", { exact: true })).toBeVisible();
   const places = panel.locator(".place-list > li");
   await expect(places).toHaveCount(3);
   await expect(places.first()).toContainText("Champaign Mock Spot 1");
