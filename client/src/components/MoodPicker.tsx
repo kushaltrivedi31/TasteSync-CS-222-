@@ -6,13 +6,23 @@ interface MoodPickerProps {
   onChange: (mood: Mood) => void;
   errorId?: string;
   ref?: Ref<HTMLFieldSetElement>;
+  legend?: string;
+  /** Prefix for element ids and the radio group name, so two pickers can coexist. */
+  idPrefix?: string;
 }
 
 /**
  * A group of native radio buttons styled as cards. Native radios give us
  * keyboard support (Tab into the group, arrow keys to move) for free.
  */
-export function MoodPicker({ selectedMood, onChange, errorId, ref }: MoodPickerProps) {
+export function MoodPicker({
+  selectedMood,
+  onChange,
+  errorId,
+  ref,
+  legend = "How are you feeling?",
+  idPrefix = "mood",
+}: MoodPickerProps) {
   return (
     <fieldset
       ref={ref}
@@ -20,18 +30,18 @@ export function MoodPicker({ selectedMood, onChange, errorId, ref }: MoodPickerP
       aria-describedby={errorId}
       aria-invalid={errorId ? true : undefined}
     >
-      <legend className="section-title">How are you feeling?</legend>
+      <legend className="section-title">{legend}</legend>
       <div className="mood-grid">
         {MOODS.map((mood) => {
           const { label, description } = MOOD_DETAILS[mood];
-          const labelId = `mood-${mood}-label`;
-          const descriptionId = `mood-${mood}-description`;
+          const labelId = `${idPrefix}-${mood}-label`;
+          const descriptionId = `${idPrefix}-${mood}-description`;
           return (
             <label key={mood} className="mood-option">
               <input
                 className="mood-input"
                 type="radio"
-                name="mood"
+                name={idPrefix}
                 value={mood}
                 checked={selectedMood === mood}
                 onChange={() => onChange(mood)}

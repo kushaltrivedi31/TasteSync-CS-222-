@@ -4,6 +4,8 @@ import { describe, expect, it, vi } from "vitest";
 import { MOODS, type Mood, type RecommendationResponse } from "../../shared/moods";
 import { App } from "../src/App";
 
+const FAKE_CUISINES = ["ramen", "pho", "sichuan"] as const;
+
 // Frontend tests mock HTTP. The real engine is covered by the server tests.
 function fakeResult(mood: Mood): RecommendationResponse {
   return {
@@ -13,6 +15,7 @@ function fakeResult(mood: Mood): RecommendationResponse {
       id: `${mood}-food-${n}`,
       name: `${mood} food ${n}`,
       explanation: `Reason ${n} this fits a ${mood} mood.`,
+      cuisine: FAKE_CUISINES[n - 1]!,
     })),
   };
 }
@@ -71,7 +74,7 @@ describe("App", () => {
       expect(screen.getByRole("radio", { name: label })).not.toBeChecked();
     }
     expect(screen.getAllByRole("radio")).toHaveLength(MOODS.length);
-    expect(screen.getByText(/choose a mood above/i)).toBeInTheDocument();
+    expect(screen.getByText(/choose a mood or finish the quiz above/i)).toBeInTheDocument();
   });
 
   it("asks for a mood instead of calling the API when none is selected", async () => {
@@ -100,7 +103,10 @@ describe("App", () => {
     expect(await screen.findByRole("heading", { name: /feeling stressed/i })).toBeInTheDocument();
     expect(fetchMock).toHaveBeenCalledWith(
       "/api/recommendations",
-      expect.objectContaining({ method: "POST", body: JSON.stringify({ mood: "stressed" }) }),
+      expect.objectContaining({
+        method: "POST",
+        body: JSON.stringify({ mood: "stressed", source: "manual" }),
+      }),
     );
 
     const cards = resultCards();
@@ -115,6 +121,10 @@ describe("App", () => {
     const user = userEvent.setup();
     render(<App />);
 
+    // Tab past the two "How do you want to start?" choices into the mood group.
+    await user.tab();
+    expect(screen.getByRole("button", { name: /pick your mood/i })).toHaveFocus();
+    await user.tab();
     await user.tab();
     expect(screen.getByRole("radio", { name: "Upbeat" })).toHaveFocus();
     await user.keyboard("[Space]");

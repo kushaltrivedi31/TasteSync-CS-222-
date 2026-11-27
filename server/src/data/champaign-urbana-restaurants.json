@@ -1,0 +1,236 @@
+{
+  "lastVerified": "2026-11-25",
+  "restaurants": [
+    {
+      "id": "juanitos-tacos",
+      "name": "Juanito's Tacos",
+      "address": "1002 N Cunningham Ave, Urbana, IL 61802",
+      "city": "Urbana",
+      "cuisines": ["street-tacos"],
+      "sources": [{ "label": "Official website", "url": "https://juanitostacostruck.com/" }]
+    },
+    {
+      "id": "cancun-taqueria",
+      "name": "Cancún Taqueria",
+      "address": "2000 N Neil St, Ste 704, Champaign, IL 61820",
+      "city": "Champaign",
+      "cuisines": ["street-tacos"],
+      "sources": [
+        { "label": "Online ordering page", "url": "https://order.online/store/23413641" },
+        {
+          "label": "Wanderlog listing",
+          "url": "https://wanderlog.com/place/details/14426987/cancun-taqueria-champaign"
+        }
+      ]
+    },
+    {
+      "id": "pokelab",
+      "name": "Pokelab",
+      "address": "605 S Sixth St, Champaign, IL 61820",
+      "city": "Champaign",
+      "cuisines": ["poke"],
+      "sources": [
+        { "label": "Official website", "url": "https://www.pokelabchampaign.com/" },
+        {
+          "label": "Champaign Center Partnership directory",
+          "url": "https://champaigncenter.com/business-directory/pokelab-from-hawaii/"
+        }
+      ]
+    },
+    {
+      "id": "cm-chicken",
+      "name": "CM Chicken",
+      "address": "49B E Green St, Champaign, IL 61820",
+      "city": "Champaign",
+      "cuisines": ["korean-fried-chicken"],
+      "sources": [{ "label": "Official website", "url": "https://www.cmchickenchampaign.com/" }]
+    },
+    {
+      "id": "bbq-chicken-urbana",
+      "name": "bb.q Chicken",
+      "address": "700 S Gregory St, Ste F, Urbana, IL 61801",
+      "city": "Urbana",
+      "cuisines": ["korean-fried-chicken"],
+      "sources": [
+        {
+          "label": "Uber Eats listing",
+          "url": "https://www.ubereats.com/store/bbq-chicken-urbana-champaign-il/ucBWBbOZXISQjLVGYee-mg"
+        }
+      ]
+    },
+    {
+      "id": "oozu-ramen-bar",
+      "name": "Oozu Ramen Bar",
+      "address": "601 S 6th St, Ste 102, Champaign, IL 61820",
+      "city": "Champaign",
+      "cuisines": ["ramen"],
+      "sources": [
+        {
+          "label": "Online ordering page",
+          "url": "https://pos.chowbus.com/online-ordering/store/15609"
+        },
+        { "label": "Yelp listing", "url": "https://www.yelp.com/biz/oozu-ramen-bar-champaign" }
+      ]
+    },
+    {
+      "id": "susuru-ramen-bar",
+      "name": "Susuru Ramen Bar",
+      "address": "621 E Green St, Ste A, Champaign, IL 61820",
+      "city": "Champaign",
+      "cuisines": ["ramen"],
+      "sources": [
+        { "label": "Yelp listing", "url": "https://www.yelp.com/biz/susuru-ramen-bar-champaign" },
+        {
+          "label": "Online ordering page",
+          "url": "https://www.toasttab.com/local/order/susururamen621/r-81e9270e-4eb4-46d8-9128-99b2b0d3d6a3"
+        }
+      ]
+    },
+    {
+      "id": "dubai-grill",
+      "name": "Dubai Grill",
+      "address": "701 S Gregory St, Urbana, IL 61801",
+      "city": "Urbana",
+      "cuisines": ["mediterranean"],
+      "sources": [
+        { "label": "Official website", "url": "https://www.dubai-grill.com/" },
+        {
+          "label": "Smile Politely review",
+          "url": "https://www.smilepolitely.com/food-drink/good-vibes-and-great-hummus-at-dubai-grill/"
+        }
+      ]
+    },
+    {
+      "id": "mezza-house",
+      "name": "Mezza House",
+      "address": "132 W Church St, Champaign, IL",
+      "city": "Champaign",
+      "cuisines": ["mediterranean"],
+      "sources": [
+        {
+          "label": "Smile Politely review",
+          "url": "https://www.smilepolitely.com/food-drink/mezza-house-metes-magnificent-mediterranean/"
+        }
+      ]
+    },
+    {
+      "id": "vinnys-by-the-slice",
+      "name": "Vinny's By The Slice & More",
+      "address": "50 E Green St, Champaign, IL 61820",
+      "city": "Champaign",
+      "cuisines": ["pizza-by-the-slice"],
+      "sources": [
+        {
+          "label": "Yelp listing",
+          "url": "https://www.yelp.com/biz/vinnys-by-the-slice-and-more-champaign"
+        },
+        {
+          "label": "Tripadvisor listing",
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g35790-d26906626-Reviews-Vinny_s_By_The_Slice_More-Champaign_Champaign_Urbana_Illinois.html"
+        }
+      ]
+    },
+    {
+      "id": "chipotle-green-st",
+      "name": "Chipotle Mexican Grill",
+      "address": "528 E Green St, Champaign, IL 61820",
+      "city": "Champaign",
+      "cuisines": ["burrito-bowl"],
+      "sources": [
+        {
+          "label": "Official location page",
+          "url": "https://locations.chipotle.com/il/champaign/528-e-green-st"
+        }
+      ]
+    },
+    {
+      "id": "pho-noodle-station",
+      "name": "Pho Noodle Station",
+      "address": "601 S 6th St, Unit 104, Champaign, IL 61820",
+      "city": "Champaign",
+      "cuisines": ["pho"],
+      "sources": [
+        { "label": "Yelp listing", "url": "https://www.yelp.com/biz/pho-noodle-station-champaign" },
+        {
+          "label": "Checkle listing",
+          "url": "https://www.checkle.com/biz/pho-noodle-station-champaign"
+        }
+      ]
+    },
+    {
+      "id": "bangkok-thai-and-pho-911",
+      "name": "Bangkok Thai and Pho 911",
+      "address": "410 E Green St, Unit 3, Champaign, IL 61820",
+      "city": "Champaign",
+      "cuisines": ["pho"],
+      "sources": [
+        {
+          "label": "Yelp listing",
+          "url": "https://www.yelp.com/biz/bangkok-thai-and-pho-911-champaign"
+        }
+      ]
+    },
+    {
+      "id": "good-judys",
+      "name": "Good Judys Espresso & Bagel Bar",
+      "address": "2740 S Philo Rd, Suite D, Urbana, IL 61802",
+      "city": "Urbana",
+      "cuisines": ["bagels"],
+      "sources": [
+        { "label": "Official website", "url": "https://www.goodjudyscu.com/" },
+        {
+          "label": "Smile Politely review",
+          "url": "https://www.smilepolitely.com/food-drink/bagel-breakfast-at-good-judys-espresso-bagel-bar/"
+        }
+      ]
+    },
+    {
+      "id": "blue-ethiopian",
+      "name": "Blue Ethiopian Cuisine & Cafe",
+      "address": "117 N Walnut St, Champaign, IL",
+      "city": "Champaign",
+      "cuisines": ["ethiopian"],
+      "sources": [
+        {
+          "label": "Smile Politely",
+          "url": "https://www.smilepolitely.com/splog/details-about-blue-ethiopian-cuisine-cafe/"
+        },
+        {
+          "label": "Experience Champaign-Urbana",
+          "url": "https://experiencecu.org/brilliant-stories?rec_id=497"
+        }
+      ]
+    },
+    {
+      "id": "shiquan",
+      "name": "Shiquan",
+      "address": "212 E Green St, Ste 102, Champaign, IL 61820",
+      "city": "Champaign",
+      "cuisines": ["sichuan"],
+      "sources": [
+        { "label": "Yelp listing", "url": "https://www.yelp.com/biz/shiquan-champaign-2" },
+        {
+          "label": "DoorDash listing",
+          "url": "https://www.doordash.com/en-US/store/shiquan-champaign-24321354/"
+        }
+      ]
+    },
+    {
+      "id": "encanto-urbana",
+      "name": "Encanto Restaurant & Bar",
+      "address": "115 W Main St, Urbana, IL",
+      "city": "Urbana",
+      "cuisines": ["peruvian"],
+      "sources": [
+        {
+          "label": "Smile Politely review",
+          "url": "https://www.smilepolitely.com/food-drink/a-review-of-the-mexican-peruvian-cuisine-at-encanto/"
+        },
+        {
+          "label": "Tripadvisor listing",
+          "url": "https://www.tripadvisor.com/Restaurant_Review-g36806-d26686520-Reviews-Encanto_Restaurant_and_Bar-Urbana_Champaign_Urbana_Illinois.html"
+        }
+      ]
+    }
+  ]
+}

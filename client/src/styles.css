@@ -450,3 +450,579 @@ button {
     width: 100%;
   }
 }
+
+/* Restaurant suggestions */
+
+.button-small {
+  min-height: 2.5rem;
+  padding: var(--space-1) var(--space-4);
+  font-size: 0.9375rem;
+}
+
+.recommendation-card .button-small {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.recommendation-card[data-active="true"] {
+  border-color: var(--color-accent);
+  box-shadow: inset 0 0 0 1px var(--color-accent);
+}
+
+.city-field {
+  display: grid;
+  gap: var(--space-1);
+  margin-bottom: var(--space-5);
+  max-width: 32rem;
+}
+
+.city-label {
+  font-weight: 700;
+}
+
+.text-input {
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.text-input:hover {
+  border-color: var(--color-accent);
+}
+
+.text-input:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.city-hint {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.restaurant-panel {
+  margin-top: var(--space-5);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+  scroll-margin: var(--space-4);
+}
+
+.restaurant-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.restaurant-title {
+  font-size: 1.125rem;
+}
+
+.demo-tag {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border-radius: 999px;
+  border: 1px dashed var(--color-text-muted);
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.restaurant-summary,
+.restaurant-empty {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.restaurant-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--space-3);
+}
+
+.restaurant-item {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-4);
+  border-radius: var(--radius-small);
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+}
+
+.restaurant-name {
+  font-weight: 700;
+}
+
+.restaurant-address {
+  color: var(--color-text-muted);
+}
+
+.restaurant-sources {
+  font-size: 0.875rem;
+}
+
+.restaurant-sources a {
+  color: var(--color-accent-hover);
+  font-weight: 600;
+  text-underline-offset: 2px;
+}
+
+.restaurant-sources a:hover {
+  color: var(--color-accent);
+}
+
+.restaurant-footnote {
+  margin-top: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+}
+
+.notice-box {
+  display: grid;
+  gap: var(--space-2);
+  justify-items: start;
+  padding: var(--space-4);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-small);
+  background: var(--color-accent-soft);
+}
+
+.notice-title {
+  font-weight: 700;
+}
+
+.notice-box .button {
+  margin-top: var(--space-2);
+}
+
+@media (max-width: 30rem) {
+  .restaurant-panel {
+    padding: var(--space-4);
+  }
+}
+
+/* Unavailable integrations */
+
+.integration-note {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  padding: var(--space-4);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-surface-muted);
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+.integration-note-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+}
+
+.integration-note-title {
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 0 var(--space-3);
+  border-radius: 999px;
+  border: 1px solid var(--color-text-muted);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.integration-note-source {
+  font-size: 0.875rem;
+}
+
+.integration-note-source a {
+  color: var(--color-accent-hover);
+  font-weight: 600;
+  text-underline-offset: 2px;
+}
+
+/* Starting choices */
+
+.start-choices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.start-choice {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-4);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+  color: var(--color-text);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 120ms ease,
+    background-color 120ms ease;
+}
+
+.start-choice:hover {
+  border-color: var(--color-accent);
+}
+
+.start-choice[aria-pressed="true"] {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.start-choice-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+}
+
+.start-choice-text {
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+.start-panel[hidden] {
+  display: none;
+}
+
+.button-text {
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-2);
+  border: 0;
+  background: none;
+  color: var(--color-accent-hover);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.near-me-note .button-text {
+  min-height: 0;
+  padding: 0;
+}
+
+/* Food vibe quiz */
+
+.quiz {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.quiz-progress {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.quiz-progress-text {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.quiz-progress-bar {
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.quiz-progress-bar > span {
+  display: block;
+  height: 100%;
+  background: var(--color-accent);
+  transition: width 160ms ease;
+}
+
+.quiz-question {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.quiz-legend {
+  display: grid;
+  gap: var(--space-1);
+  padding: 0;
+  margin-bottom: var(--space-4);
+}
+
+.quiz-topic {
+  color: var(--color-accent-hover);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.quiz-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.quiz-heading:focus {
+  outline: none;
+}
+
+.quiz-heading:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.quiz-options {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.quiz-option {
+  display: block;
+  cursor: pointer;
+}
+
+.quiz-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.quiz-option-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 3rem;
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+}
+
+.quiz-option-card::before {
+  content: "";
+  flex-shrink: 0;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 2px solid var(--color-text-muted);
+  border-radius: 50%;
+}
+
+.quiz-option:hover .quiz-option-card {
+  border-color: var(--color-accent);
+}
+
+.quiz-input:checked + .quiz-option-card {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.quiz-input:checked + .quiz-option-card::before {
+  border-color: var(--color-accent);
+  background: radial-gradient(var(--color-accent) 45%, transparent 50%);
+}
+
+.quiz-input:focus-visible + .quiz-option-card {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.quiz-explanation {
+  font-size: 1.0625rem;
+}
+
+.quiz-tiebreak,
+.quiz-disclaimer {
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+.quiz .actions {
+  margin-top: 0;
+}
+
+/* Where to search */
+
+.where-form {
+  display: grid;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.where-form .city-field {
+  margin-bottom: 0;
+}
+
+.source-choice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.source-choice legend {
+  width: 100%;
+  padding: 0;
+  margin-bottom: var(--space-2);
+}
+
+.inline-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 2.75rem;
+  cursor: pointer;
+}
+
+.inline-radio input {
+  width: 1.125rem;
+  height: 1.125rem;
+  accent-color: var(--color-accent);
+}
+
+.city-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.city-row .text-input {
+  flex: 1 1 14rem;
+  min-width: 0;
+}
+
+.near-me-note {
+  font-size: 0.9375rem;
+}
+
+/* Google results and map */
+
+.live-tag {
+  border-style: solid;
+}
+
+.map-wrapper {
+  margin-bottom: var(--space-4);
+}
+
+.restaurant-map {
+  height: 20rem;
+  border-radius: var(--radius-small);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  background: var(--color-surface-muted);
+}
+
+.restaurant-map[hidden] {
+  display: none;
+}
+
+.map-message {
+  margin-bottom: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-small);
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+.map-wrapper .map-message {
+  margin: var(--space-2) 0 0;
+}
+
+.place-item {
+  position: relative;
+  padding-left: calc(var(--space-4) + 2.25rem);
+}
+
+.place-item[data-selected="true"] {
+  border-color: var(--color-focus);
+  box-shadow: inset 0 0 0 1px var(--color-focus);
+}
+
+.place-number {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  display: inline-grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-accent-text);
+  font-weight: 800;
+  font-size: 0.875rem;
+}
+
+.place-item[data-selected="true"] .place-number {
+  background: var(--color-focus);
+  color: var(--color-surface);
+}
+
+.place-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.place-link {
+  color: var(--color-accent-hover);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  text-underline-offset: 2px;
+}
+
+.google-attribution {
+  margin-top: var(--space-2);
+}
+
+/* Google's attribution rules: "Google Maps", Roboto 400, 12–16px, approved colors, no wrapping. */
+.google-attribution-mark {
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 0.8125rem;
+  color: #5e5e5e;
+  white-space: nowrap;
+}
+
+@media (prefers-color-scheme: dark) {
+  .google-attribution-mark {
+    color: #ffffff;
+  }
+}
+
+@media (max-width: 30rem) {
+  .restaurant-map {
+    height: 16rem;
+  }
+
+  .city-row .button {
+    width: 100%;
+  }
+}

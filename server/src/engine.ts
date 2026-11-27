@@ -4,8 +4,10 @@ import {
   MOODS,
   type FoodRecommendation,
   type Mood,
+  type MoodSource,
   type RecommendationResponse,
 } from "../../shared/moods.js";
+import { CUISINE_TAGS } from "../../shared/restaurants.js";
 
 /** Number of recommendations returned for every mood. */
 export const RECOMMENDATIONS_PER_MOOD = 3;
@@ -16,6 +18,7 @@ const recommendationSchema = z.object({
     .regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, "id must be lowercase kebab-case (e.g. calm-ramen)"),
   name: z.string().trim().min(1, "name must not be empty"),
   explanation: z.string().trim().min(1, "explanation must not be empty"),
+  cuisine: z.enum(CUISINE_TAGS),
 });
 
 const moodListSchema = z
@@ -62,10 +65,13 @@ const mappings = parseMappings(rawMappings);
  * Returns the curated recommendations for a mood. The result is deterministic:
  * the same mood always produces the same three recommendations in the same order.
  */
-export function getRecommendations(mood: Mood): RecommendationResponse {
+export function getRecommendations(
+  mood: Mood,
+  source: MoodSource = "manual",
+): RecommendationResponse {
   return {
     mood,
-    source: "manual",
+    source,
     // Copy so callers can't mutate the shared mapping data.
     recommendations: mappings[mood].map((item) => ({ ...item })),
   };

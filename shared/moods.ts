@@ -4,6 +4,8 @@
  * This file must stay dependency-free so both sides can import it directly.
  */
 
+import type { CuisineTag } from "./restaurants.js";
+
 /** The five moods TasteSync supports, in display order. */
 export const MOODS = ["upbeat", "calm", "stressed", "low-energy", "adventurous"] as const;
 
@@ -23,10 +25,13 @@ export function isMood(value: unknown): value is Mood {
 }
 
 /**
- * Where the mood came from. Phase 1 only supports moods the user picks
- * themselves; a music-derived source may be added in Phase 2.
+ * Where the mood came from: picked directly ("manual"), or suggested by the
+ * food vibe quiz and confirmed unchanged ("quiz"). If someone changes the quiz
+ * suggestion, the mood they pick counts as "manual".
  */
-export type MoodSource = "manual";
+export const MOOD_SOURCES = ["manual", "quiz"] as const;
+
+export type MoodSource = (typeof MOOD_SOURCES)[number];
 
 export interface FoodRecommendation {
   /** Stable identifier, unique across all moods (e.g. "upbeat-street-tacos"). */
@@ -35,11 +40,15 @@ export interface FoodRecommendation {
   name: string;
   /** A short explanation of why it fits the mood. */
   explanation: string;
+  /** Tag used to look up matching restaurants. */
+  cuisine: CuisineTag;
 }
 
 /** Body of POST /api/recommendations. */
 export interface RecommendationRequest {
   mood: Mood;
+  /** Defaults to "manual" when omitted. */
+  source?: MoodSource;
 }
 
 /** Successful response from POST /api/recommendations. */
@@ -58,6 +67,15 @@ export type ApiErrorCode =
   | "INVALID_JSON"
   | "INVALID_REQUEST"
   | "INVALID_MOOD"
+  | "INVALID_CUISINE"
+  | "INVALID_CITY"
+  | "UNSUPPORTED_CITY"
+  | "INVALID_LOCATION"
+  | "RATE_LIMITED"
+  | "PLACES_NOT_CONFIGURED"
+  | "PLACES_QUOTA_EXCEEDED"
+  | "PLACES_TIMEOUT"
+  | "PLACES_PROVIDER_ERROR"
   | "PAYLOAD_TOO_LARGE"
   | "NOT_FOUND"
   | "INTERNAL_ERROR";

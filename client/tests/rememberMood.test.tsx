@@ -19,7 +19,7 @@ describe("remembering the selected mood", () => {
 
     expect(screen.getByRole("radio", { name: "Stressed" })).toBeChecked();
     expect(fetchMock).not.toHaveBeenCalled();
-    expect(screen.getByText(/choose a mood above/i)).toBeInTheDocument();
+    expect(screen.getByText(/choose a mood or finish the quiz above/i)).toBeInTheDocument();
   });
 
   it("saves the selection whenever it changes", async () => {
@@ -70,6 +70,7 @@ describe("remembering the selected mood", () => {
                 id: `adventurous-${n}`,
                 name: `Food ${n}`,
                 explanation: `Reason ${n}.`,
+                cuisine: "ethiopian",
               })),
             }),
             { status: 200, headers: { "Content-Type": "application/json" } },
